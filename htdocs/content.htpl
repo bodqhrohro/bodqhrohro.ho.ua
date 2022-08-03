@@ -57,7 +57,7 @@
 					en => 'Application for calculating the root-mean-square error (12-key edition)',
 					ru => 'Приложение для расчёта среднеквадратической погрешности (12-key edition)',
 				},
-				width => 100,
+				width => 160,
 				height => 216,
 			},
 			{
