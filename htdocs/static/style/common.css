@@ -10,6 +10,7 @@ body {
     line-height: 18px;
     font-family: monospace;
     min-height: calc(100vh - 16px);
+    image-rendering: pixelated;
 }
 
 ul {
