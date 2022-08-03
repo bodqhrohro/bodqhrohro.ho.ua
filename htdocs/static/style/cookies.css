@@ -1,0 +1,90 @@
+body {
+    padding: 0.01px 0;
+}
+
+.cookies_block, .cookies_button {
+    margin: 8px 4px;
+    padding: 7px 3px;
+    border: 3px solid green;
+}
+
+.cookies_block:nth-child(n+2) {
+    margin-top: 16px;
+}
+
+.cookies_block {
+    box-sizing: border-box;
+    width: 100%;
+    width: calc(100% - 8px);
+    font-size: 0;
+    zoom: 1;
+    clear: both;
+}
+
+.cookies_block h6 {
+    font-weight: bold;
+    font-size: 16px;
+    margin: 0;
+}
+
+.cookies_block_en {
+    border-color: #55a;
+    color: #55a;
+}
+
+.cookies_block_ru {
+    border-color: #a55;
+    color: #a55;
+}
+
+.cookies_block_ua {
+    border-color: #aa5;
+    color: #aa5;
+}
+
+.cookies_img {
+    width: 60px;
+}
+
+.cookies_text {
+    width: 90%;
+    width: calc(100% - 60px);
+}
+
+.cookies_img, .cookies_text {
+    font-size: 16px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.cookies_button {
+    display: inline-block;
+    float: right;
+}
+
+.cookies_button a {
+    font-weight: bold;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.cookies_button_yes {
+    border-color: #5a5;
+    color: #5a5;
+}
+
+.cookies_button_yes a:hover {
+    background-color: #5a5;
+    color: Black;
+}
+
+.cookies_button_no {
+    border-color: #a55;
+    color: #a55;
+}
+
+.cookies_button_no a:hover {
+    background-color: #a55;
+    color: Black;
+}

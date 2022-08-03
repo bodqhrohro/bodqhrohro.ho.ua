@@ -1,0 +1,78 @@
+html {
+    background-color: Black;
+}
+
+body {
+    background-color: Black;
+    scrollbar-track-color: Black;
+    scrollbar-shadow-color: #5a5;
+    scrollbar-highlight-color: Black;
+    scrollbar-face-color: Black;
+    scrollbar-darkshadow-color: Black;
+    scrollbar-base-color: Black;
+    scrollbar-3dlight-color: #5a5;
+    scrollbar-arrow-color: #5a5;
+    color: #5a5;
+}
+
+a {
+    color: #55a;
+}
+
+a:visited {
+    color: #a5a;
+}
+
+#titlebar {
+    background-image: url(data:image/gif;base64,R0lGODdhAQACAJAAAFNSUgD/ACH5BAEAAAAALAAAAAABAAIAAAICRAoAOw==);
+}
+
+#titlebar .title {
+    font-weight: bold;
+    background-color: Black;
+}
+
+#titlebar .title:visited {
+    color: #5a5;
+}
+
+#titlebar .title:focus,
+.language-switcher-item:focus,
+.button-focus:focus,
+.language-switcher input[type="checkbox"]:focus ~ label,
+.collapse-row input[type="checkbox"]:focus ~ label {
+    background-color: #a55;
+    color: Black;
+}
+
+.language-switcher {
+    background-color: Black;
+}
+
+.language-switcher input[type="checkbox"]:checked ~ label {
+    background-color: #5a5;
+    color: Black;
+}
+
+#menubar {
+    background-image: url(data:image/gif;base64,R0lGODdhBQASAJAAAP///4CAgCwAAAAABQASAAACFIwfcKrZDpkDlNWL7aSpc21IIXIUADs=);
+}
+
+.menubar-item {
+    text-shadow: -2px -2px 2px White, 2px -2px 2px White, -2px 2px 2px White, 2px 2px 2px White;
+}
+
+.menubar-item a:hover, .menubar-item a:focus {
+    background-color: Black;
+    text-shadow: none;
+    color: White;
+}
+
+.menubar-item, .menubar-item a {
+    color: Black;
+    text-decoration: none;
+}
+
+#playerlayer1 {
+    background-color: #0f0;
+}

@@ -1,0 +1,33 @@
+<?
+    if ((url_param('set_cookie') or 0) == 1) {
+		my %cookies;
+		$cookies{use_cookies} = 1;
+		my @exclude = ('set_cookie');
+		for my $known (@{$main::known_cookie_keys}) {
+			my $value = (url_param($known) or '');
+			if ($value ne '') {
+				$cookies{$known} = $value;
+				push @exclude, $known;
+			}
+		}
+        my @cookies = map { cookie(
+			-name => $_,
+			-value => $cookies{$_},
+            -samesite => 'Lax',
+		) } (keys %cookies);
+        $main::inject_headers->{-cookie} = \@cookies;
+        Delete @exclude;
+	} elsif ((cookie(-name=>'use_cookies') or 0) != 1 && (url_param('nocookie') or 0) != 1 && path_info() !~ /cookies\.htpl/) {
+        my %params = Vars();
+        $params{'return'} = current_page();
+        print redirect llink 'cookies.htpl', \%params;
+        exit 0;
+    }
+?><!DOCTYPE html>
+<html lang="<?=$main::lang?>">
+<head>
+<?=block("header_common")?>
+<? if (defined $_[1]) { ?>
+<?=$_[1]?>
+<? } ?>
+</head>

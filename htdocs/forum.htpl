@@ -1,0 +1,14 @@
+<?=block("header")?>
+<body>
+<?=block("bodyheader")?>
+<div id="body1">
+	<?=loc({
+		ua => 'Сторінка',
+		en => 'Page',
+		ru => 'Страница',
+	})?>: <? for my $i (1..3) { ?><a href="gb/<?=$i?>.html" target="guestbook"><?=$i?></a> <? } ?><br />
+	<iframe name="guestbook" src="gb/1.html"></iframe>
+</div>
+<?=block("bodyfooter")?>
+</body>
+</html>

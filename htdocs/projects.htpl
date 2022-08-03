@@ -1,0 +1,107 @@
+<?=block("header")?>
+<body>
+<?=block("bodyheader")?>
+<div id="body1">
+<?
+	my $statuses = {
+		notstarted => {
+			ua => 'розробка ще не почата',
+			en => 'development not yet started',
+			ru => 'разработка ещё не начата',
+		},
+		draft => {
+			ua => 'нариси',
+			en => 'draft',
+			ru => 'проектируется',
+		},
+		development => {
+			ua => 'у розробці',
+			en => 'in development',
+			ru => 'в разработке',
+		},
+		ready => {
+			ua => 'готовий до використання',
+			en => 'ready for use',
+			ru => 'готов к использованию',
+		},
+		frozen => {
+			ua => 'заморожено',
+			en => 'frozen',
+			ru => 'заморожен',
+		},
+		cancelled => {
+			ua => 'скасовано',
+			en => 'cancelled',
+			ru => 'отменён',
+		},
+	};
+	for my $project (
+	{
+		title => {
+			common => 'Bodq Calculator',
+		},
+		description => {
+			ua => 'Потужний, функціональний, зручний і стильний калькулятор для мобільних пристроїв. Оптимізований під клавіатурне керування та роздільну здатність 176x220, однак працюватиме і на більших роздільних здатностях.',
+			en => 'A powerful, functional, handy and stylish calculator for mobile devices. Optimized for the keypad control and 176x220 resolution, but would work on larger resolutions as well.',
+			ru => 'Мощный, функциональный, удобный и стильный калькулятор для мобильных устройств. Оптимизирован под клавиатурное управление и разрешение 176x220, однако будет работать и на бóльших разрешениях.',
+		},
+		image => 'calculator.gif',
+		status => 'development',
+		link => '',
+	},
+	{
+		title => {
+			common => 'SEmidred',
+		},
+		description => {
+			ua => 'Клон вбудованого семплового MIDI-редактора MusicDJ зі старих телефонів Sony Ericsson. Окрім усіх можливостей оригінального редактора, планується ввести експорт у режим сумісности (через наявність нестандартного запису, що полегшує подальше редагування, MIDI-файли, створені MusicDJ, не відтворюються більшістю сторонніх програвачів).',
+			en => 'A replica of the MusicDJ builtin sampling MIDI editor from old Sony Ericsson phones. Besides of all the features of the original editor, a compatibility mode export is planned (as due to a non-standard record, which alleaviates further editing, MIDI files created by MusicDJ cannot be played by the majority of third-party players).',
+			ru => 'Клон встроенного сэмплового MIDI-редактора MusicDJ со старых телефонов Sony Ericsson. Кроме всех возможностей оригинального редактора, планируется ввести экспорт в режиме совместимости (из-за наличия нестандартной записи, облегчающей последующее редактирование, MIDI-файлы, созданные MusicDJ, не воспроизводятся большинством сторонних проигрывателей).',
+		},
+		image => 'missing.gif',
+		status => 'notstarted',
+		link => '',
+	},
+	{
+		title => {
+			common => '&lt;no name yet&gt;',
+		},
+		description => {
+			ua => 'Альтернативная оболонка для Windows, що базується на HTA+CSS+JS. Головною особливістю інтерфейсу є так звані «стеки» &mdash; екранні панелі, що згортаються у спливаючі кнопки, для розміщення посилань і користувацьких файлів &mdash; впорядкована заміна робочому столу. Більшість стеків можна редагувати, а за необхідності &mdash; видаляти чи створювати нові. Планується підтримка iframe- і flash-застосунків, а в далекому майбутньому також ґаджетів робочого столу, віконних застосунків Windows і застосунків для инших середовищ: eyeOS, HP webOS, B2G тощо.',
+			en => 'An alternative shell for Windows based on HTA+CSS+JS. The main peculiarity of the interface are so-called “stacks”: screen panels for placing links and user’s files which can be rolled up into autohiding buttons. Most of the stacks can be edited, as well as deleting or creating new ones is possible. Support for iframe apps and flash apps is planned, and in the distant future also for desktop gadgets, windowed Windows apps and apps for other Web environments: eyeOS, HP webOS, B2G, etc.',
+			ru => 'Основанная на HTA+CSS+JS альтернативная оболочка для Windows. Главной особенностью интерфейса являются так называемые «стеки» &mdash; сворачивающиеся во всплывающие кнопки экранные панели для размещения ссылок и пользовательских файлов &mdash; упорядоченная замена рабочему столу. Большинство стеков можно редактировать, а при необходимости &mdash; удалять или создавать новые. Планируется поддержка iframe- и flash-приложений, а в отдалённом будущем также гаджетов рабочего стола, оконных приложений Windows и приложений для других веб-сред: eyeOS, HP webOS, B2G и др.',
+		},
+		image => 'missing.gif',
+		status => 'cancelled',
+		link => '',
+	},
+) {
+?>
+	<div class="block">
+		<div class="block_img block_img4">
+			<img src="static/images/projects/<?=$project->{image}?>" />
+		</div>
+		<div class="block_text">
+			<h6><?=loc($project->{title})?></h6>
+			<?=loc($project->{description})?><br />
+			<?=loc({
+				ua => 'Статус',
+				en => 'Status',
+				ru => 'Статус',
+			})?>: <?=loc($statuses->{$project->{status}})?>.<br />
+			<?=loc({
+				ua => 'Опубліковано',
+				en => 'Published',
+				ru => 'Опубликован',
+			})?>: <?=$statuses->{link} // (loc({
+				ua => 'ні',
+				en => 'no',
+				ru => 'нет',
+			}) . '.')?>
+		</div>
+	</div>
+<? } ?>
+</div>
+<?=block("bodyfooter")?>
+</body>
+</html>

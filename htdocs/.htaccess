@@ -1,0 +1,11 @@
+DirectoryIndex index.htpl
+Action PTS /cgi-bin/engine.pl
+AddHandler PTS .htpl
+
+Redirect 301 "/index.htm" "/index.htpl"
+Redirect 301 "/about.htm" "/about.htpl"
+Redirect 301 "/projects.htm" "/projects.htpl"
+Redirect 301 "/contents.htm" "/content.htpl"
+Redirect 301 "/forum.htm" "/forum.htpl"
+
+AddDefaultCharset utf-8

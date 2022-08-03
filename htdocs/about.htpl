@@ -1,0 +1,149 @@
+<?=block("header")?>
+<body>
+<?=block("bodyheader")?>
+<div id="body1">
+<?
+	sub redlock {
+		return '<div class="redlock">
+			<div class="lock button-focus" tabindex="0" onclick=""></div>
+			<div class="button-tooltip">' . loc({
+				ua => 'Заблоковано з метою безпеки',
+				en => 'Blocked for security reason',
+				ru => 'Заблокировано в целях безопасности',
+			}) . '</div>
+		</div>';
+	};
+
+	sub yellowlock {
+		return '<div class="yellowlock">
+			<a class="lock button-focus" href="' . $_[0] . '"> </a>
+			<div class="button-tooltip">' . loc({
+				ua => 'Обфусковано з метою безпеки',
+				en => 'Obfuscated for security reason',
+				ru => 'Обфусцировано в целях безопасности',
+			}) . '</div>
+		</div>';
+	};
+
+	for my $section (
+	{
+		title => {
+			ua => 'Коротка інформація',
+			en => 'Short info',
+			ru => 'Краткая информация',
+		},
+		children => [
+			{
+				key => {
+					ua => 'ПІБ',
+					en => 'Full name',
+					ru => 'ФИО',
+				},
+				value => {
+					ua => 'Горбешко Богдан Миколайович',
+					en => 'Bohdan Horbeshko',
+					ru => 'Горбешко Богдан Николаевич',
+				},
+			},
+			{
+				key => {
+					ua => 'Дата народження',
+					en => 'Birth date',
+					ru => 'Дата рождения',
+				},
+				value => {
+					ua => '06-жов-1995 н.е.',
+					en => '06-Oct-1995 AD',
+					ru => '06-окт-1995 н.э.',
+				},
+			},
+			{
+				key => {
+					ua => 'Місце проживання',
+					en => 'Place of residence',
+					ru => 'Место проживания',
+				},
+				value => {
+					ua => 'Україна, Одеська обл., ' . redlock(),
+					en => 'Ukraine, Odesa reg., ' . redlock(),
+					ru => 'Украина, Одесская обл., ' . redlock(),
+				},
+			},
+		],
+	},
+	{
+		title => {
+			ua => 'Контакти',
+			en => 'Contacts',
+			ru => 'Контакты',
+		},
+		children => [
+			{
+				key => { common => 'ICQ', },
+				value => {
+					common => "<a href=\"javascript:safelink('gsso9..vvv-hbp-bnl.vghsdo`fdr.blc-ogo>thm<53424523/%`bshnm<ldrr`fd');\">645-356-340</a>",
+				},
+			},
+			{
+				key => { common => 'Skype', },
+				value => {
+					common => "<a href=\"javascript:safelink('rjxod9ancpgqngqn>bg`s');\">bodqhrohro</a>",
+				},
+			},
+			{
+				key => {
+					ua => 'Мобільний номер',
+					en => 'Mobile number',
+					ru => 'Мобильный номер',
+				},
+				value => {
+					common => redlock(),
+				},
+			},
+			{
+				key => { common => 'e-mail', },
+				value => {
+					common => yellowlock("javascript:safelink('l`hksn9ancpgqngqn?fl`hk-bnl');"),
+				},
+			},
+			{
+				key => { common => 'Jabber', },
+				value => {
+					common => yellowlock('xmpp:bodqhrohro@jabber.ru?message;'),
+				},
+			},
+			{
+				key => { common => 'Telegram', },
+				value => {
+					common => '<a href="https://t.me/bodqhrohro">@bodqhrohro</a>',
+				},
+			},
+			{
+				key => { common => 'Matrix', },
+				value => {
+					common => '<a href="https://matrix.to/#/@bodqhrohro:matrix.org">@bodqhrohro:matrix.org</a>',
+				},
+			},
+		],
+	},
+) {
+	my $id = 'collapse-row-' . lc($section->{title}->{en});
+	$id =~ s/[^a-z\-]//;
+?>
+	<div class="collapse-row">
+		<input type="checkbox" id="<?=$id?>" checked />
+		<label for="<?=$id?>" onclick=""><?=loc($section->{title})?>:</label>
+<?
+	for my $row (@{$section->{children}}) {
+?>
+	<dl class="info-row">
+		<dt><?=loc($row->{key})?>:</dt>
+		<dd><?=loc($row->{value})?></dd>
+	</dl>
+<?  } ?>
+	</div>
+<? } ?>
+</div>
+<?=block("bodyfooter")?>
+</body>
+</html>

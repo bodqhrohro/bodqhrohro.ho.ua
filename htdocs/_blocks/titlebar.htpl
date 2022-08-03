@@ -1,0 +1,27 @@
+	<div id="titlebar">
+		<div id="photothumb1">
+			<img src="static/images/photothumb1.gif" />
+		</div>
+		<div class="title-wrapper">
+			<a class="title" id="title" href="<?=llink ''?>">bodqhrohro</a>
+		</div>
+		<div class="language-switcher">
+<?
+my @reordered_languages = (@$main::languages);
+@reordered_languages = grep { $_ ne $main::lang } @reordered_languages;
+unshift(@reordered_languages, $main::lang);
+for my $lang (@reordered_languages) {
+?>
+			<a
+				class="language-switcher-item language-switcher-item-<?=$lang?>"
+				href="<?=llink(current_page(), {lang => $lang})?>"
+			>
+				<?=uc $lang?>
+			</a>
+<? if ($lang eq $main::lang) { ?>
+			<input type="checkbox" id="language-switcher-toggle" />
+			<label for="language-switcher-toggle" onclick="">↓</label>
+<? } ?>
+<? } ?>
+		</div>
+	</div>

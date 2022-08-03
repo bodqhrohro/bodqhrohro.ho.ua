@@ -1,0 +1,48 @@
+<script language="JavaScript">
+(function() {
+    var handler = function() {
+        var limitedWidth, limitedHeight;
+        if (document.body.clientWidth && document.body.clientWidth < 420) {
+            limitedWidth = (((document.body.clientWidth - 20) / 10) |0) * 10;
+        }
+        if (document.body.clientHeight && document.body.clientHeight < 396) {
+            limitedHeight = (((document.body.clientHeight - 36) / 18) |0) * 18;
+        }
+
+        var body1 = document.getElementById('body1');
+        for (var i=0; i < body1.childNodes.length; i++) {
+            var row = body1.childNodes[i];
+            if (row.className === 'collapse-row') {
+                for (var j=0; j < row.childNodes.length; j++) {
+                    var info = row.childNodes[j];
+                    if (info.className == 'info-row') {
+                        var a = info.childNodes[0].childNodes[0];
+                        var link = a.getAttribute('data-link');
+                        var width = parseInt(a.getAttribute('data-width'));
+                        var height = parseInt(a.getAttribute('data-height'));
+                        if (limitedWidth && width > limitedWidth) {
+                            width = limitedWidth;
+                        }
+                        if (limitedHeight && height > limitedHeight) {
+                            height = limitedHeight;
+                        }
+                        if (link) {
+                            (function(link, width, height) {
+                                a.onclick = function(e) {
+                                    var event = e || window.event;
+                                    openiframe('contents/' + link, width, height);
+                                    event.preventDefault();
+                                };
+                            })(link, width, height);
+                        } else {
+                            info.childNodes[0].className += ' nolink';
+                        }
+                        info.childNodes[0].className += ' visible';
+                    }
+                }
+            }
+        }
+    };
+    window.addEventListener ? window.addEventListener('load', handler) : window.attachEvent('onload', handler);
+})();
+</script>

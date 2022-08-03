@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="<?=$main::lang?>">
+<head>
+<?=block("header_common")?>
+    <link rel="stylesheet" href="static/style/cookies.css" type="text/css" />
+</head>
+<body>
+<? for my $loc (
+	{
+		lang => 'ua',
+		img => 'burdock.gif',
+		title => 'Цей сайт хоче обліпити вашу ЕОМ репʼяшками.',
+		description => 'Репʼяшки зберігатимуться в оглядачі і міститимуть інформацію про налаштування сайту. Сайт може працювати і без них, але тоді налаштуваннями доведеться засмічувати посилання на сторінки. Воно вам треба? ;)',
+		no_button => 'Давайте без репʼяшків',
+		yes_button => 'РЕПʼЯШКИИИИИИ',
+	},
+	{
+		lang => 'en',
+		img => 'cookies.gif',
+		title => 'This website wants to feed your computer with cookies.',
+		description => 'Cookies would be stored in the browser and contain information about the website settings. This website is able to work without cookies too, but this would mean polluting page links with settings data. Do ya really want that? ;)',
+		no_button => 'Letʼs go without cookies',
+		yes_button => 'COOOOOKIES NOM NOM',
+	},
+	{
+		lang => 'ru',
+		img => 'cookies.gif',
+		title => 'Этот сайт хочет накормить вашу ЭВМ печеньками.',
+		description => 'Печеньки будут храниться в обозревателе и содержать информацию о настройках сайта. Сайт может работать и без них, но тогда настройками придётся засорять ссылки на страницы. Оно вам надо? ;)',
+		no_button => 'Давайте без печенек',
+		yes_button => 'ПЕЧЕЕЕЕЕЕНЬКИ',
+	},
+) {
+?>
+	<div class="cookies_block cookies_block_<?=$loc->{lang}?>">
+		<div class="cookies_img">
+			<img src="static/images/<?=$loc->{img}?>" />
+		</div>
+		<div class="cookies_text">
+			<h6><?=$loc->{title}?></h6>
+			<?=$loc->{description}?>
+			<div class="cookie_buttons_container">
+				<div class="cookies_button cookies_button_no"><a href="<?=llink(url_param('return'), {nocookie => 1, lang => $loc->{lang}}, ['return'])?>"><?=$loc->{no_button}?></a></div>
+				<div class="cookies_button cookies_button_yes"><a href="<?=llink(url_param('return'), {set_cookie => 1, lang => $loc->{lang}}, ['return'])?>"><?=$loc->{yes_button}?></a></div>
+			</div>
+		</div>
+	</div>
+<? } ?>
+</body>
+</html>

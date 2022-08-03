@@ -1,0 +1,115 @@
+<?=block('header', block('content_script'))?>
+<body>
+<?=block("bodyheader")?>
+<div id="body1">
+<?
+	for my $section (
+	{
+		title => {
+			ua => 'Трекерна музика',
+			en => 'Tracker music',
+			ru => 'Трекерная музыка',
+		},
+		children => [
+			{
+				link => 'GAMRRMX.it',
+				title => {
+					common => 'GAMMRMX.it',
+				},
+				width => 400,
+				height => 360,
+			},
+			{
+				link => 'iks_bell_dnb.it',
+				title => {
+					common => 'iks_bell_dnb.it',
+				},
+				width => 400,
+				height => 360,
+			},
+			{
+				link => 'iks_bell_dnb.mp3',
+				title => {
+					common => 'iks_bell_dnb.mp3',
+				},
+				width => 400,
+				height => 360,
+			},
+		],
+	},
+	{
+		title => {
+			ua => 'Веб-розробки',
+			en => 'Web developments',
+			ru => 'Веб-разработки',
+		},
+		children => [
+			{
+				link => 'ololo.hta',
+				title => {
+					common => 'ololo.hta',
+				},
+			},
+			{
+				link => 'studhelp.htm',
+				title => {
+					ua => 'Застосунок для розрахунку середньоквадратичної похибки (12-key edition)',
+					en => 'Application for calculating the root-mean-square error (12-key edition)',
+					ru => 'Приложение для расчёта среднеквадратической погрешности (12-key edition)',
+				},
+				width => 100,
+				height => 216,
+			},
+			{
+				link => 'studhelp_touch.htm',
+				title => {
+					ua => 'Застосунок для розрахунку середньоквадратичної похибки (touchscreen edition)',
+					en => 'Application for calculating the root-mean-square error (touchscreen edition)',
+					ru => 'Приложение для расчёта среднеквадратической погрешности (touchscreen edition)',
+				},
+				width => 400,
+				height => 504,
+			},
+		],
+	},
+) {
+	my $id = 'collapse-row-' . lc($section->{title}->{en});
+	$id =~ s/[^a-z\-]//;
+?>
+	<div class="collapse-row">
+		<input type="checkbox" id="<?=$id?>" checked />
+		<label for="<?=$id?>" onclick=""><?=loc($section->{title})?>:</label>
+<?
+	for my $row (@{$section->{children}}) {
+		my $ext = $row->{link};
+		$ext =~ s/^.+\.//;
+?>
+	<div class="info-row"><?
+		?><div class="inline-button button-play"><?
+			?><a class="button-focus"
+			<? if (grep {$_ eq $ext} ('it', 'htm', 'mp3')) { ?>
+				data-link="<?=$row->{link}?>" data-width="<?=$row->{width}?>" data-height="<?=$row->{height}?>" href="#"
+			<? } ?>>  </a><?
+			?><div class="button-tooltip"><?=loc({
+				ua => 'Запустити',
+				en => 'Launch',
+				ru => 'Запустить',
+			})?></div>
+		</div><?
+		?><div class="inline-button button-download"><?
+			?><a class="button-focus" href="contents/<?=$row->{link}?>">  </a><?
+			?><div class="button-tooltip"><?=loc({
+				ua => 'Відкрити',
+				en => 'Open',
+				ru => 'Открыть',
+			})?></div>
+		</div><?
+		?><span><?=loc($row->{title})?></span><?
+	?></div>
+<?  } ?>
+	</div>
+<? } ?>
+</div>
+<?=block("bodyfooter")?>
+</body>
+</html>

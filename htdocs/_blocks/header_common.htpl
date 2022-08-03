@@ -1,0 +1,9 @@
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Bohdan Horbeshko aka bodqhrohro" />
+    <base href="<?=llink ''?>" />
+    <link rel="canonical" href="<?=canonical_url?>" />
+    <title>--- bodqhrohro homepage ---</title>
+    <link rel="stylesheet" href="static/style/common.css" type="text/css" />
+    <link rel="stylesheet" href="static/style/theme_c00lhackz0r.css" type="text/css" />
+    <script language="JavaScript" src="static/scripts/graphic.js"></script>
