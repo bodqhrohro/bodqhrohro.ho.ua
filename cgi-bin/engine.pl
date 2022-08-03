@@ -99,7 +99,7 @@ sub canonical_url {
 
 # MAIN
 
-$main::root_dir_url = '/new';
+$main::root_dir_url = '';
 $main::root_dir = $ENV{'DOCUMENT_ROOT'} . $main::root_dir_url;
 
 $main::lang = (url_param('lang') or '');
