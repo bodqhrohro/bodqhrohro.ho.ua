@@ -24,7 +24,7 @@
         exit 0;
     }
 ?><!DOCTYPE html>
-<html lang="<?=$main::lang?>">
+<html lang="<?=$main::lang eq 'ua' ? 'uk' : $main::lang?>">
 <head>
 <?=block("header_common")?>
 <? if (defined $_[1]) { ?>
