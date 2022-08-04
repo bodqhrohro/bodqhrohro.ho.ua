@@ -31,7 +31,11 @@
                                 a.onclick = function(e) {
                                     var event = e || window.event;
                                     openiframe('contents/' + link, width, height);
-                                    event.preventDefault();
+                                    if (typeof event.preventDefault === 'function') {
+                                        event.preventDefault();
+                                    } else {
+                                        event.returnValue = false;
+                                    }
                                 };
                             })(link, width, height);
                         } else {

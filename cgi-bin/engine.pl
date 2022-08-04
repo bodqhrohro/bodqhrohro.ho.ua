@@ -51,7 +51,7 @@ sub loc {
 
 sub llink { # local link
 	my $link = shift @_;
-	return alink($main::root_dir_url . '/' . $link, @_);
+	return alink($main::root_dir_absolute_url . '/' . $link, @_);
 };
 
 sub alink { # absolute link
@@ -101,6 +101,7 @@ sub canonical_url {
 
 $main::root_dir_url = '';
 $main::root_dir = $ENV{'DOCUMENT_ROOT'} . $main::root_dir_url;
+$main::root_dir_absolute_url = 'http://bodqhrohro.ho.ua/' . $main::root_dir_url;
 
 $main::lang = (url_param('lang') or '');
 if (! grep {$_ eq $main::lang} @{$main::languages}) {

@@ -13,6 +13,21 @@ body {
     image-rendering: pixelated;
 }
 
+html {
+    scrollbar-track-color: Black;
+    scrollbar-shadow-color: Lime;
+    scrollbar-highlight-color: Black;
+    scrollbar-face-color: Black;
+    scrollbar-darkshadow-color: Black;
+    scrollbar-base-color: Black;
+    scrollbar-3dlight-color: Lime;
+    scrollbar-arrow-color: Lime;
+}
+
+a {
+    word-wrap: break-word;
+}
+
 ul {
     margin: 0;
     padding-left: 20px;
@@ -100,14 +115,17 @@ li {
 
 .language-switcher-item-ua {
     background-image: url(data:image/gif;base64,R0lGODdhCgASALEAAAAAAAAA////AAAAACH5BAEAAAAALAAAAAAKABIAAAIWhI+pa+EPo5y02iiy3rz7D4YcQ5ZHAQA7);
+    *background-image: url(mhtml:http://bodqhrohro.ho.ua/static/style/images.mhtml!flag_ua.gif);
 }
 
 .language-switcher-item-en {
     background-image: url(data:image/gif;base64,R0lGODdhCgASALEAAAAAAAAA////AAAAACH5BAEAAAAALAAAAAAKABIAAAIahI+pa+EPo3Qi1PmuxfhqDmnfVI0gxqTqUQAAOw==);
+    *background-image: url(mhtml:http://bodqhrohro.ho.ua/static/style/images.mhtml!flag_en.gif);
 }
 
 .language-switcher-item-ru {
     background-image: url(data:image/gif;base64,R0lGODdhCgASALEAAAAAAAD//////wAAACH5BAEAAAAALAAAAAAKABIAAAIWhI+pa+IPo5wUhouz3rznCoYgQ5ZHAQA7);
+    *background-image: url(mhtml:http://bodqhrohro.ho.ua/static/style/images.mhtml!flag_ru.gif);
 }
 
 #menubar {
@@ -182,10 +200,12 @@ dl.info-row dd, dl.info-row dt {
 
 .redlock .lock {
     background-image: url(data:image/gif;base64,R0lGODdhCgASAJAAAP8AAP8A/yH5BAEAAAEALAAAAAAKABIAAAIdjI+pywsPUjzT1HAzgpDyjmUTSD6WGX6jejUuUwAAOw==);
+    *background-image: url(mhtml:http://bodqhrohro.ho.ua/static/style/images.mhtml!redlock.gif);
 }
 
 .yellowlock .lock {
     background-image: url(data:image/gif;base64,R0lGODdhCgASAJAAAP//AP8A/yH5BAEAAAEALAAAAAAKABIAAAIdjI+pywsPUjzT1HAzgpDyjmUTSD6WGX6jejUuUwAAOw==);
+    *background-image: url(mhtml:http://bodqhrohro.ho.ua/static/style/images.mhtml!yellowlock.gif);
 }
 
 .block {
@@ -238,11 +258,13 @@ dl.info-row dd, dl.info-row dt {
 
 .button-play .button-focus {
     background-image: url(data:image/gif;base64,R0lGODdhFAAMAKIAAAB/AAB/fwD/AADAwADAAAD//wAAAAAAACwAAAAAFAAMAAIDNSi63E4wyhmBmCHQafHIG9RJwWCC1BiV5llwF9maxSupEDvUG06UvJAvGCL4ijcBYMlsOpuJADs=);
+    *background-image: url(mhtml:http://bodqhrohro.ho.ua/static/style/images.mhtml!button-play.gif);
     background-position: 0 3px;
 }
 
 .button-download .button-focus {
     background-image: url(data:image/gif;base64,R0lGODlhFAAMAKIAAAB/AP8A/wB/fwC/vwD//wC/AAD/AAAAACH5BAEAAAEALAAAAAAUAAwAAgM7GLpqDizKYEqBM9ebpdsAYHQMYFkYuZicGhlpRsx0bRMLMez8oPQ8QUAH9C2KA6EA+SsKFYKodEp9JgAAOw==);
+    *background-image: url(mhtml:http://bodqhrohro.ho.ua/static/style/images.mhtml!button-download.gif);
     background-position: 0 3px;
 }
 

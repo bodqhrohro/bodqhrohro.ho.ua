@@ -25,6 +25,7 @@ a:visited {
 
 #titlebar {
     background-image: url(data:image/gif;base64,R0lGODdhAQACAJAAAFNSUgD/ACH5BAEAAAAALAAAAAABAAIAAAICRAoAOw==);
+    *background-image: url(mhtml:http://bodqhrohro.ho.ua/static/style/images.mhtml!theme_c00lhackz0r_titlebar.gif);
 }
 
 #titlebar .title {
@@ -55,11 +56,17 @@ a:visited {
 }
 
 #menubar {
+    background-color: #aaa;
     background-image: url(data:image/gif;base64,R0lGODdhBQASAJAAAP///4CAgCwAAAAABQASAAACFIwfcKrZDpkDlNWL7aSpc21IIXIUADs=);
+    *background-image: url(mhtml:http://bodqhrohro.ho.ua/static/style/images.mhtml!theme_c00lhackz0r_menubar.gif);
 }
 
 .menubar-item {
     text-shadow: -2px -2px 2px White, 2px -2px 2px White, -2px 2px 2px White, 2px 2px 2px White;
+    filter: DropShadow(Color=White, OffX=-2, OffY=-2),
+            DropShadow(Color=White, OffX=2, OffY=-2),
+            DropShadow(Color=White, OffX=-2, OffY=2),
+            DropShadow(Color=White, OffX=2, OffY=2);
 }
 
 .menubar-item a:hover, .menubar-item a:focus {

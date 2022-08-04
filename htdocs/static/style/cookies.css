@@ -65,11 +65,10 @@ body {
 .cookies_button a {
     font-weight: bold;
     text-decoration: none;
-    color: inherit;
     cursor: pointer;
 }
 
-.cookies_button_yes {
+.cookies_button_yes, .cookies_button_yes a {
     border-color: #5a5;
     color: #5a5;
 }
@@ -79,7 +78,7 @@ body {
     color: Black;
 }
 
-.cookies_button_no {
+.cookies_button_no, .cookies_button_no a {
     border-color: #a55;
     color: #a55;
 }

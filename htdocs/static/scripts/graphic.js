@@ -11,7 +11,7 @@
  var body1 = document.getElementById('body1');
  if (body1) {
   var cursor = document.createElement('img');
-  cursor.setAttribute('src', 'data:image/gif;base64,R0lGODlhCAAQAIABAAD/AP///yH/C05FVFNDQVBFMi4wAwEAAAAh+QQJMgABACwAAAAACAAQAAACDIyPqcvtD6OcoNpaAAAh+QQFMgABACwAAAAACAAQAAACCoyPqcvtD6OcrAAAOw==');
+  cursor.setAttribute('src', 'static/images/cursor1.gif');
   cursor.setAttribute('id', 'cursor1');
   body1.appendChild(cursor);
 
