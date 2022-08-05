@@ -78,10 +78,10 @@
 ) {
 ?>
 	<div class="block">
-		<div class="block_img block_img4">
+		<span class="block_img block_img4">
 			<img src="static/images/projects/<?=$project->{image}?>" />
-		</div>
-		<div class="block_text">
+		</span>
+		<span class="block_text">
 			<h6><?=loc($project->{title})?></h6>
 			<?=loc($project->{description})?><br />
 			<?=loc({
@@ -98,7 +98,7 @@
 				en => 'no',
 				ru => 'нет',
 			}) . '.')?>
-		</div>
+		</span>
 	</div>
 <? } ?>
 </div>

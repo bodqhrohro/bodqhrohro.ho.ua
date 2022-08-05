@@ -36,7 +36,7 @@
    var rect = title.getBoundingClientRect();
    if (rect) {
     title.style.position = 'relative';
-    title.style.left = (-(rect.x - ((rect.x / 10) |0) * 10)) + 'px';
+    title.style.left = (-(rect.left - ((rect.left / 10) |0) * 10)) + 'px';
    }
   }
  };

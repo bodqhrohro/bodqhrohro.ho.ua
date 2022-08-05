@@ -4,25 +4,25 @@
 <div id="body1">
 <?
 	sub redlock {
-		return '<div class="redlock">
-			<div class="lock button-focus" tabindex="0" onclick=""></div>
-			<div class="button-tooltip">' . loc({
+		return '<span class="redlock">
+			<span class="lock button-focus" tabindex="0" onclick=""> </span>
+			<span class="button-tooltip">' . loc({
 				ua => 'Заблоковано з метою безпеки',
 				en => 'Blocked for security reason',
 				ru => 'Заблокировано в целях безопасности',
-			}) . '</div>
-		</div>';
+			}) . '</span>
+		</span>';
 	};
 
 	sub yellowlock {
-		return '<div class="yellowlock">
+		return '<span class="yellowlock">
 			<a class="lock button-focus" href="' . $_[0] . '"> </a>
-			<div class="button-tooltip">' . loc({
+			<span class="button-tooltip">' . loc({
 				ua => 'Обфусковано з метою безпеки',
 				en => 'Obfuscated for security reason',
 				ru => 'Обфусцировано в целях безопасности',
-			}) . '</div>
-		</div>';
+			}) . '</span>
+		</span>';
 	};
 
 	for my $section (

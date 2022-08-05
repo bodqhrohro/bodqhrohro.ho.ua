@@ -25,10 +25,10 @@
         ru => 'Гостевая книга (архив)',
     },
 ) { ?>
-            <div class="menubar-item"><a href="<?=llink $menuitem->{link}?>"><?=loc($menuitem)?></a></div>
+            <span class="menubar-item"><a href="<?=llink $menuitem->{link}?>"><?=loc($menuitem)?></a></span>
 <? } ?>
-            <div class="menubar-item menubar-item-updated">
+            <span class="menubar-item menubar-item-updated">
                 <?=loc({ua=>'Оновлено', en=>'Updated at', ru=>'Обновлено'})?>:
                 <?=strftime "%d.%m.%Y", localtime($main::modification_time)?>
-            </div>
+            </span>
         </div>

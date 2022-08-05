@@ -4,11 +4,11 @@
         en=>'Deployed on <a href="https://www.ho.ua">ho.ua</a>: free hosting in Ukraine!',
         ru=>'Размещено на <a href="https://www.ho.ua">ho.ua</a>: бесплатный хостинг в Украине!',
     })?></div>
-    <div class="footer-image"><img src="static/images/footer/perl.gif" alt="Powered by Perl"/></div>
-    <div class="footer-image"><img src="static/images/footer/vim.gif" alt="Edited with Vim"/></div>
-    <div class="footer-image"><img src="static/images/footer/freebsd.gif" alt="Powered by FreeBSD"/></div>
-    <div class="footer-image"><img src="static/images/footer/facebook.gif" alt="Not facebook'ed"/></div>
-    <div class="footer-image"><img src="static/images/footer/ieexplode.gif" alt="Microsoft Internet Exploder"/></div>
+    <span class="footer-image"><img src="static/images/footer/perl.gif" alt="Powered by Perl"/></span>
+    <span class="footer-image"><img src="static/images/footer/vim.gif" alt="Edited with Vim"/></span>
+    <span class="footer-image"><img src="static/images/footer/freebsd.gif" alt="Powered by FreeBSD"/></span>
+    <span class="footer-image"><img src="static/images/footer/facebook.gif" alt="Not facebook'ed"/></span>
+    <span class="footer-image"><img src="static/images/footer/ieexplode.gif" alt="Microsoft Internet Exploder"/></span>
     <div class="footer-text"><?=loc({
         ua=>'Вихідний код сайту',
         en=>'The source code of the website',

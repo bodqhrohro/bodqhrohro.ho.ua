@@ -42,6 +42,11 @@ li {
     background-repeat: repeat;
     background-position: center;
     position: relative;
+    min-height: 72px;
+}
+
+#titlebar:nth-of-type(1) {
+    min-height: 18px;
 }
 
 #titlebar .title-wrapper {
@@ -169,7 +174,15 @@ li {
 }
 
 dl.info-row dd, dl.info-row dt {
-    display: inline-block;
+    float: left;
+}
+
+dl.info-row, .collapse-row {
+    clear: left;
+}
+
+dl.info-row dd {
+    padding-left: 10px;
 }
 
 .redlock, .yellowlock, .button-focus {
@@ -188,12 +201,12 @@ dl.info-row dd, dl.info-row dt {
     width: 10px;
 }
 
-.button-tooltip {
+span.button-tooltip {
     display: none;
 }
 
-.button-focus:hover ~ .button-tooltip,
-.button-focus:focus ~ .button-tooltip {
+.button-focus:hover ~ span.button-tooltip,
+.button-focus:focus ~ span.button-tooltip {
     display: inline-block;
     padding-right: 10px;
 }
