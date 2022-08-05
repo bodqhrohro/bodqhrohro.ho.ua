@@ -47,6 +47,6 @@
             }
         }
     };
-    window.addEventListener ? window.addEventListener('load', handler) : window.attachEvent('onload', handler);
+    window.addEventListener ? window.addEventListener('load', handler, true) : window.attachEvent('onload', handler);
 })();
 </script>
